@@ -55,7 +55,7 @@ export default function EditTopicForm({
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             setDescription(e.target.value)
           }
-          value={description}
+          value={newDescription}
         />
         <button
           className="bg-emerald-300 text-white font-bold px-6 py-3 w-fit rounded-md"
