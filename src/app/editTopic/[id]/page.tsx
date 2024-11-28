@@ -1,6 +1,6 @@
 import { auth } from '@/auth'
 import EditTopicForm from '@/components/EditTopicForm'
-import { redirect, useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 
 const apiUrl = process.env.API_URL
 
