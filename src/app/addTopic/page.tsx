@@ -1,9 +1,14 @@
 'use client' //브라우저가 실제 랜더링 및 사용한다는 뜻으로 useState사용시 씀
 
-import { useRouter } from 'next/navigation'
+import { useSession } from 'next-auth/react'
+import { redirect, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 export default function AddTopicPage() {
+  const { data: session } = useSession()
+  if (!session) {
+    redirect('/login') //주소를 보내줌! 로그인 안 되어있으면
+  }
   const [title, setTitle] = useState('') //이건 사용자 입력을 받고 직접 저장되도록 하는 것
   const [description, setDescription] = useState('')
   const router = useRouter()
